@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body class="container">
+
+    <header>
+        <% include header %>
+       
+    <link href="../index.css" rel="stylesheet" type="text/css">
+    
+    </header>
+
+    <main>
+        <div class="jumbotron">
+            <h1>This is EATS</h1>
+            <p>Welcome to EATS</p>
+        </div>
+
+          <form action="/query" method="post">
+            <h2>Query<h2>
+            <label for="queryStr">Search By Keyword</label>
+            <input id="queryStr" type="text" name="queryStr" placeholder="enter name">
+            <button id="execute" type="submit">Search</button>
+            
+        </form>
+
+       </div>
+       
+            <select class="form-control" name="selectClass">
+                <option selected disabled>Select class</option>
+                <% for (var x in classType) { %>
+                <option><%= classType[x].class; %></option>
+                <% } %>
+            </select>
+        </div>
+
+        <h2>Items!</h2>
+        <ul>
+            <% listings.forEach(function(p3items) { %>
+                <li><%= p3items.name %> - <%= p3items.price %></li>
+            <% }); %>
+        </ul>
+    </main>
+
+
+    
+</body>
+</html>
